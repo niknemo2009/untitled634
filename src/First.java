@@ -23,6 +23,7 @@ public class First extends JFrame {
         button1 = new JButton();
         toggleButton1 = new JToggleButton();
         radioButton2 = new JRadioButton();
+        checkBox1 = new JCheckBox();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -38,6 +39,9 @@ public class First extends JFrame {
 
         //---- radioButton2 ----
         radioButton2.setText("text");
+
+        //---- checkBox1 ----
+        checkBox1.setText("text");
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
@@ -58,11 +62,17 @@ public class First extends JFrame {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                     .addComponent(radioButton2)
                     .addGap(101, 101, 101))
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGap(60, 60, 60)
+                    .addComponent(checkBox1)
+                    .addContainerGap(392, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addContainerGap(119, Short.MAX_VALUE)
+                    .addContainerGap(86, Short.MAX_VALUE)
+                    .addComponent(checkBox1)
+                    .addGap(9, 9, 9)
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                             .addComponent(radioButton1)
@@ -89,5 +99,6 @@ public class First extends JFrame {
     private JButton button1;
     private JToggleButton toggleButton1;
     private JRadioButton radioButton2;
+    private JCheckBox checkBox1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
