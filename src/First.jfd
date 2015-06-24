@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space :p:25:p, comp textField1:::p:235:p}, seq l {space :p:95:p, par t {comp button1:::p::p, comp radioButton1:::p::p}}}, space ::124:x}}"
-			"$verticalGroup": "par l {seq t {space ::119:x, comp radioButton1:::p::p, space :p:28:p, comp button1:::p::p, space s:::p, comp textField1:::p::p, space :p:29:p}}"
+			"$horizontalGroup": "par l {seq {par l:::p {seq {space :p:25:p, comp textField1:::p:235:p}, seq {space :p:95:p, par t {comp button1:::p::p, comp radioButton1:::p::p}, space :::x, comp toggleButton1:::p::p}}, space ::91:x, comp radioButton2:::p::p, space :p:101:p}}"
+			"$verticalGroup": "par l {seq t {space ::119:x, par l {seq t {comp radioButton1:::p::p, space :p:28:p}, seq t {comp toggleButton1:::p::p, space :p:16:p}}, par b {comp button1::b:p::p, comp radioButton2::b:p::p}, space s:::p, comp textField1:::p::p, space :p:29:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JTextField" ) {
@@ -19,9 +19,17 @@ new FormModel {
 				name: "button1"
 				"text": "text"
 			} )
+			add( new FormComponent( "javax.swing.JToggleButton" ) {
+				name: "toggleButton1"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JRadioButton" ) {
+				name: "radioButton2"
+				"text": "text"
+			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"location": new java.awt.Point( 0, 5 )
+			"size": new java.awt.Dimension( 515, 300 )
 		} )
 	}
 }

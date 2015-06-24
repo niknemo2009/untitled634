@@ -21,6 +21,8 @@ public class First extends JFrame {
         textField1 = new JTextField();
         radioButton1 = new JRadioButton();
         button1 = new JButton();
+        toggleButton1 = new JToggleButton();
+        radioButton2 = new JRadioButton();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -31,12 +33,18 @@ public class First extends JFrame {
         //---- button1 ----
         button1.setText("text");
 
+        //---- toggleButton1 ----
+        toggleButton1.setText("text");
+
+        //---- radioButton2 ----
+        radioButton2.setText("text");
+
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGroup(contentPaneLayout.createParallelGroup()
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(25, 25, 25)
                             .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE))
@@ -44,16 +52,27 @@ public class First extends JFrame {
                             .addGap(95, 95, 95)
                             .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(button1)
-                                .addComponent(radioButton1))))
-                    .addContainerGap(124, Short.MAX_VALUE))
+                                .addComponent(radioButton1))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(toggleButton1)))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                    .addComponent(radioButton2)
+                    .addGap(101, 101, 101))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                     .addContainerGap(119, Short.MAX_VALUE)
-                    .addComponent(radioButton1)
-                    .addGap(28, 28, 28)
-                    .addComponent(button1)
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addComponent(radioButton1)
+                            .addGap(28, 28, 28))
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addComponent(toggleButton1)
+                            .addGap(16, 16, 16)))
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(button1)
+                        .addComponent(radioButton2))
                     .addGap(18, 18, 18)
                     .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addGap(29, 29, 29))
@@ -68,5 +87,7 @@ public class First extends JFrame {
     private JTextField textField1;
     private JRadioButton radioButton1;
     private JButton button1;
+    private JToggleButton toggleButton1;
+    private JRadioButton radioButton2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
