@@ -1,0 +1,66 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_25" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:34:p, par l:::p {seq {comp label5:::p::p, space :::p, comp textField5_telef:::::x}, seq {comp label4:::p::p, space :::p, comp textField4_conf_passw:::::x}, seq {comp label3:::p::p, space :::p, comp textField3_passw:::p:202:p}, seq {comp label1:::p::p, space :::x, comp textField1_fio:::p:231:p}, seq {comp label2:::p::p, space s:::p, comp textField2_login:::p:213:p}, seq l {space :p:9:p, comp label6:::p::p, space s:::p, comp textField6_emeil:::::x}}, space ::78:x}, seq t {space ::34:x, comp button1:::p:170:p, space :p:180:p}}"
+			"$verticalGroup": "par l {seq l {space :p:19:p, par b {comp label1::b:p::p, comp textField1_fio::b:p::p}, space :::p, par b {comp label2::b:p::p, comp textField2_login::b:p::p}, space :::p, par b {comp label3::b:p::p, comp textField3_passw::b:p::p}, space :::p, par b {comp label4::b:p::p, comp textField4_conf_passw::b:p::p}, space u:::p, par b {comp label5::b:p::p, comp textField5_telef::b:p::p}, space :::p, par b {comp label6::b:p::p, comp textField6_emeil::b:p::p}, space :p:32:p, comp button1:::p::p, space ::31:x}}"
+		} ) {
+			name: "this"
+			"title": "Форма регистрации"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "ФИО -"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Логин -"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Пароль -"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Повтор пароля - "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Телефон -"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Емейл - "
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1_fio"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2_login"
+				"name": "login"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3_passw"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4_conf_passw"
+				"name": "confirm"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5_telef"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField6_emeil"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Зарегистрировать"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 5, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

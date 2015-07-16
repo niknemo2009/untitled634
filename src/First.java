@@ -22,9 +22,10 @@ public class First extends JFrame {
         User temp1=new User("Petrov","qwq1@qwe.com",123456);
         User temp2=new User("Petrov1","qwq2@qwe.com",2123456);
         User temp3=new User("Petrov2","qwq3@qwe.com",3123456);
-        DefaultComboBoxModel<User> model=new DefaultComboBoxModel<User>(User.getSprUser());
+        Vector<User> v1=new Vector<User>(User.getSprUser());
+        DefaultComboBoxModel<User> model=new DefaultComboBoxModel<User>(v1);
 list1.setModel(model);
-        comboBox1.setModel(model);
+       comboBox1.setModel(model);
         Vector<String> header=new Vector<String>();
         header.add("Имя");
         header.add("емейл");
@@ -45,8 +46,9 @@ table1.setModel(tabl);
     private void button1_addActionPerformed(ActionEvent e) {
         // TODO add your code here
        String message=null;
+        User user=null;
         try {
-            User user = new User(textField1_name.getText(),
+             user= new User(textField1_name.getText(),
                     textField2_emeil.getText(), Integer.valueOf(textField3_telefon.getText()));
             message = "Успешно создан";
             textField1_name.setText("");
@@ -58,8 +60,10 @@ table1.setModel(tabl);
         }finally {
             JOptionPane.showMessageDialog(this,message);
         }
-
-
+        DefaultComboBoxModel<User> qwe= (DefaultComboBoxModel<User>) list1.getModel();
+qwe.addElement(user);
+        //list1.setListData();
+        System.out.println(User.getSprUser());
 
     }
 
@@ -100,7 +104,6 @@ table1.setModel(tabl);
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Nezdoliy Yura
         panel1 = new JPanel();
         button1_add = new JButton();
         button2_delete = new JButton();
@@ -121,14 +124,6 @@ table1.setModel(tabl);
         //======== panel1 ========
         {
             panel1.setBorder(new TitledBorder("\u041f\u0430\u043d\u0435\u043b\u044c \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c\u0438"));
-
-            // JFormDesigner evaluation mark
-            panel1.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), panel1.getBorder())); panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
-
 
             //---- button1_add ----
             button1_add.setText("add");
@@ -251,7 +246,6 @@ table1.setModel(tabl);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Nezdoliy Yura
     private JPanel panel1;
     private JButton button1_add;
     private JButton button2_delete;

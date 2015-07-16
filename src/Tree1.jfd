@@ -4,44 +4,86 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space :p:85:p, comp panel1:::p::p}, seq l {space :p:44:p, comp button1:::p::p}}, space ::77:x}}"
-			"$verticalGroup": "par l {seq t {space ::75:x, comp panel1:::p::p, space :p:77:p, comp button1:::p::p, space :p:28:p}}"
+			"$horizontalGroup": "par l {seq t {space ::257:x, comp panel1:::p::p, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp panel1:::p::p, space ::136:x}}"
 		} ) {
 			name: "this"
 			"defaultCloseOperation": 3
+			"background": new java.awt.Color( 52, 52, 202, 255 )
+			"title": "InternetShop v. 1.0"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {space :0:332:x}"
-				"$verticalGroup": "par l {space :0:74:x}"
+				"$horizontalGroup": "par l {seq l {space :p:24:p, par l:::p {comp label1::::59:x, comp label2::::59:x}, space :::p, par l:::p {comp textField1_login::::118:x, comp passwordField1_passw::::118:x, comp button1:::p::p}, space ::14:x}}"
+				"$verticalGroup": "par l {seq l {space :::p, par b {comp label1::b:p:25:p, comp textField1_login::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp passwordField1_passw::b:p::p}, space u:::p, comp button1:::p::p, space ::9:x}}"
 			} ) {
 				name: "panel1"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
-				"text": "text"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+				"border": new javax.swing.border.TitledBorder( "Панель авторизации" )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Логин -"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Пароль -"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField1_login"
+				} )
+				add( new FormComponent( "javax.swing.JPasswordField" ) {
+					name: "passwordField1_passw"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "вход"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+				} )
 			} )
 			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 				name: "menuBar1"
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-					name: "menu1"
-					"text": "Управление пользователями"
+					name: "menu1_gost"
+					"text": "Гость"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "menuItem1"
-						"text": "Добавить "
+						name: "menuItem1_showVitrin"
+						"text": "Просмотр витрины"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem1ActionPerformed", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem1_showVitrinActionPerformed", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "menuItem2"
-						"text": "Удалить"
+						name: "menuItem2_registr"
+						"text": "Регистрация"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem2_registrActionPerformed", true ) )
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-					name: "menu2"
-					"text": "text"
+					name: "menu2_pokup"
+					"text": "Покупатель"
+					"enabled": false
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem3_zakazU"
+						"text": "Мои заказы"
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu3_prodav"
+					"text": "Продавец"
+					"enabled": false
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem4_tovar"
+						"text": "Работа с товаром"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem5_order"
+						"text": "Работа с заказами"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem6_users"
+						"text": "Работа с пользователями"
+					} )
 				} )
 			}
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
+			"location": new java.awt.Point( 0, 5 )
 			"size": new java.awt.Dimension( 510, 340 )
 		} )
 	}
