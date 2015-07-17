@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:34:p, par l:::p {seq {comp label5:::p::p, space :::p, comp textField5_telef:::::x}, seq {comp label4:::p::p, space :::p, comp textField4_conf_passw:::::x}, seq {comp label3:::p::p, space :::p, comp textField3_passw:::p:202:p}, seq {comp label1:::p::p, space :::x, comp textField1_fio:::p:231:p}, seq {comp label2:::p::p, space s:::p, comp textField2_login:::p:213:p}, seq l {space :p:9:p, comp label6:::p::p, space s:::p, comp textField6_emeil:::::x}}, space ::78:x}, seq t {space ::34:x, comp button1:::p:170:p, space :p:180:p}}"
-			"$verticalGroup": "par l {seq l {space :p:19:p, par b {comp label1::b:p::p, comp textField1_fio::b:p::p}, space :::p, par b {comp label2::b:p::p, comp textField2_login::b:p::p}, space :::p, par b {comp label3::b:p::p, comp textField3_passw::b:p::p}, space :::p, par b {comp label4::b:p::p, comp textField4_conf_passw::b:p::p}, space u:::p, par b {comp label5::b:p::p, comp textField5_telef::b:p::p}, space :::p, par b {comp label6::b:p::p, comp textField6_emeil::b:p::p}, space :p:32:p, comp button1:::p::p, space ::31:x}}"
+			"$horizontalGroup": "par l {seq {space :p:34:p, par l:::p {seq {comp label5:::p::p, space :::p, comp textField5_telef:::::x}, seq {comp label4:::p::p, space :::p, comp textField4_conf_passw:::::x}, seq {comp label3:::p::p, space :::p, comp textField3_passw:::p:202:p}, seq {comp label1:::p::p, space :::x, comp textField1_fio:::p:231:p}, seq {comp label2:::p::p, space s:::p, comp textField2_login:::p:213:p}, seq l {space :p:9:p, par l {comp button1:::p:170:p, seq {comp label6:::p::p, space s:::p, comp textField6_emeil:::::x}}}}, space ::83:x}}"
+			"$verticalGroup": "par l {seq l {space :p:19:p, par b {comp label1::b:p::p, comp textField1_fio::b:p::p}, space :::p, par b {comp label2::b:p::p, comp textField2_login::b:p::p}, space :::p, par b {comp label3::b:p::p, comp textField3_passw::b:p::p}, space :::p, par b {comp label4::b:p::p, comp textField4_conf_passw::b:p::p}, space u:::p, par b {comp label5::b:p::p, comp textField5_telef::b:p::p}, space :::p, par b {comp label6::b:p::p, comp textField6_emeil::b:p::p}, space :p:30:p, comp button1:::p::p, space ::33:x}}"
 		} ) {
 			name: "this"
 			"title": "Форма регистрации"
@@ -57,10 +57,11 @@ new FormModel {
 				name: "button1"
 				"text": "Зарегистрировать"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 5, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"size": new java.awt.Dimension( 405, 300 )
 		} )
 	}
 }

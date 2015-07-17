@@ -36,10 +36,7 @@ public class My_conn {
         } catch (SQLException ex) {
             Logger.getLogger(My_conn.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }/**
-     * @param args the command line arguments/**
-     * @param args the command line arguments
-     */
+    }
 
     public Connection getCon() {
         return con;
@@ -52,16 +49,20 @@ public class My_conn {
 
     public static void main(String[] args) throws SQLException {
        //  My_conn test=new My_conn("org.sqlite.JDBC","jdbc:sqlite:d:\\111\\Phone_Spravochnik.db");
-        My_conn test=new My_conn("com.mysql.jdbc.Driver","jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8");
+//        My_conn test=new My_conn("com.mysql.jdbc.Driver","jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8");
+        My_conn test=new My_conn("com.mysql.jdbc.Driver","jdbc:mysql://127.0.0.1:3306/test");
 
 
 
         Connection con1=test.con;
         Statement  stmt=con1.createStatement();
+        stmt.execute("INSERT INTO `test`.`user` (`name`, `login`, `password`) VALUES ('Сидоров', 'ййй', '234');");
         ResultSet  rs=stmt.executeQuery("select * from User");
+
         while(rs.next()){
-            System.out.println(rs.getString(1)+" "+rs.getString(2));
+            System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
         }
+
    }
 
 }

@@ -22,7 +22,7 @@ public class First extends JFrame {
         User temp1=new User("Petrov","qwq1@qwe.com",123456);
         User temp2=new User("Petrov1","qwq2@qwe.com",2123456);
         User temp3=new User("Petrov2","qwq3@qwe.com",3123456);
-        Vector<User> v1=new Vector<User>(User.getSprUser());
+        Vector<User> v1=new Vector<User>();
         DefaultComboBoxModel<User> model=new DefaultComboBoxModel<User>(v1);
 list1.setModel(model);
        comboBox1.setModel(model);
@@ -31,14 +31,14 @@ list1.setModel(model);
         header.add("емейл");
         header.add("Телефон");
         Vector<Vector> data=new Vector<Vector>();
-        for(User tempUser:User.getSprUser()){
-            Vector temp=new Vector();
-            temp.add(tempUser.name);
-            temp.add(tempUser.emeil);
-            temp.add(tempUser.telefon);
-            data.add(temp);
-
-        }
+//        for(User tempUser:User.getSprUser()){
+//            Vector temp=new Vector();
+//            temp.add(tempUser.name);
+//            temp.add(tempUser.emeil);
+//            temp.add(tempUser.telefon);
+//            data.add(temp);
+//
+//        }
         DefaultTableModel tabl=new DefaultTableModel(data,header);
 table1.setModel(tabl);
     }
@@ -63,7 +63,7 @@ table1.setModel(tabl);
         DefaultComboBoxModel<User> qwe= (DefaultComboBoxModel<User>) list1.getModel();
 qwe.addElement(user);
         //list1.setListData();
-        System.out.println(User.getSprUser());
+       // System.out.println(User.getSprUser());
 
     }
 

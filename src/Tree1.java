@@ -20,25 +20,25 @@ public class Tree1 extends JFrame {
     }
 
     private void button1ActionPerformed(ActionEvent e) {
-        Role role;
-        String login=textField1_login.getText();
-        String password=new String(passwordField1_passw.getPassword());
-        Set<User> spr=User.getSprUser();
-        for(User temp:spr){
-          if(login.equals(temp.login)){
-              if(password.equals(temp.password)){
-               role=temp.getUserRole();
-                  setPrava(role);
-              }else{
-                  JOptionPane.showMessageDialog(this,"Password incorrect");
-              }
-
-          }else{
-            JOptionPane.showMessageDialog(this,"Login is bad");
-          }
-            textField1_login.setText("");
-            passwordField1_passw.setText("");
-        }
+//        Role role;
+//        String login=textField1_login.getText();
+//        String password=new String(passwordField1_passw.getPassword());
+//        Set<User> spr=User.getSprUser();
+//        for(User temp:spr){
+//          if(login.equals(temp.login)){
+//              if(password.equals(temp.password)){
+//               role=temp.getUserRole();
+//                  setPrava(role);
+//              }else{
+//                  JOptionPane.showMessageDialog(this,"Password incorrect");
+//              }
+//
+//          }else{
+//            JOptionPane.showMessageDialog(this,"Login is bad");
+//          }
+//            textField1_login.setText("");
+//            passwordField1_passw.setText("");
+//        }
 
 
         // TODO add your code here
@@ -68,6 +68,11 @@ public class Tree1 extends JFrame {
 
     private void menuItem1_showVitrinActionPerformed(ActionEvent e) {
         new FormShowVitrina().setVisible(true);
+    }
+
+    private void menuItem6_usersActionPerformed(ActionEvent e) {
+      new AdminUsersForm().setVisible(true);
+        // TODO add your code here
     }
 
     private void initComponents() {
@@ -139,7 +144,6 @@ public class Tree1 extends JFrame {
             //======== menu3_prodav ========
             {
                 menu3_prodav.setText("\u041f\u0440\u043e\u0434\u0430\u0432\u0435\u0446");
-                menu3_prodav.setEnabled(false);
 
                 //---- menuItem4_tovar ----
                 menuItem4_tovar.setText("\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u0442\u043e\u0432\u0430\u0440\u043e\u043c");
@@ -151,6 +155,12 @@ public class Tree1 extends JFrame {
 
                 //---- menuItem6_users ----
                 menuItem6_users.setText("\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c\u0438");
+                menuItem6_users.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        menuItem6_usersActionPerformed(e);
+                    }
+                });
                 menu3_prodav.add(menuItem6_users);
             }
             menuBar1.add(menu3_prodav);

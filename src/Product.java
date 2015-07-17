@@ -20,9 +20,9 @@ public class Product {
     }
 
     static {
-     sprProduct.add(new Product(GrupProduct.Molochka,20,new Date(),"Bashtanka","Kefir"));
-        sprProduct.add(new Product(GrupProduct.Molochka,26,new Date(),"Bashtanka","Smetana"));
-        sprProduct.add(new Product(GrupProduct.Fish,20,new Date(),"Nov Svet","bychky"));
+     new Product(GrupProduct.Molochka,20,new Date(),"Bashtanka","Kefir");
+        new Product(GrupProduct.Molochka,26,new Date(),"Bashtanka","Smetana");
+        new Product(GrupProduct.Fish,20,new Date(),"Nov Svet","bychky");
     }
 
     public Product(GrupProduct grupProduct, int price, Date dateIzg, String proizvod, String name) {

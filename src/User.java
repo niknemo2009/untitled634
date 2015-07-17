@@ -12,13 +12,15 @@ public class User implements  Comparable<User> {
     String emeil;
     int telefon;
     private Role userRole=Role.Gost;
-   private static Set<User> sprUser=new TreeSet<User>();
+
+  // private static Set<User> sprUser=new TreeSet<User>();
 
     public User(String name, String emeil, int telefon) {
         this.name = name;
         this.emeil = emeil;
         this.telefon = telefon;
-        sprUser.add(this);
+       // userSqlController.createUser(this);
+        //sprUser.add(this);
     }
 
     public User(String name, String login, String password, String emeil, int telefon, Role userRole) {
@@ -28,20 +30,23 @@ public class User implements  Comparable<User> {
         this.emeil = emeil;
         this.telefon = telefon;
         this.userRole = userRole;
-        sprUser.add(this);
+       // userSqlController.createUser(this);
+       // sprUser.add(this);
     }
+
+
 
     public Role getUserRole() {
         return userRole;
     }
 
-    public static Set<User> getSprUser() {
-        return sprUser;
-    }
+//   // public static Set<User> getSprUser() {
+//        return sprUser;
+//    }
 
     @Override
     public String toString() {
-        return name ;
+        return name + " Login - "+login;
     }
 
     @Override

@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_25" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:52:p, par l {comp button1_del:::p::p, comp scrollPane1:::p:132:p}, space ::310:x}}"
+			"$verticalGroup": "par l {seq l {space :p:35:p, comp scrollPane1:::p::p, space :p:34:p, comp button1_del:::p::p, space ::62:x}}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "list1"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1_del"
+				"text": "Удалить"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1_delActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 510, 340 )
+		} )
+	}
+}

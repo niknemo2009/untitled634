@@ -67,7 +67,6 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu3_prodav"
 					"text": "Продавец"
-					"enabled": false
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "menuItem4_tovar"
 						"text": "Работа с товаром"
@@ -79,6 +78,7 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "menuItem6_users"
 						"text": "Работа с пользователями"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem6_usersActionPerformed", true ) )
 					} )
 				} )
 			}

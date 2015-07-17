@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Set;
+import java.util.TreeSet;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 /*
@@ -14,6 +15,7 @@ import javax.swing.GroupLayout;
  */
 
 public class RegistarationForm extends JFrame {
+
     public RegistarationForm() {
         initComponents();
         MyVerifer my1=new MyVerifer();
@@ -25,32 +27,32 @@ private class MyVerifer extends  InputVerifier{
     @Override
     public boolean verify(JComponent jComponent) {
         boolean result=true;
-        System.out.println(jComponent.getName());
-        String message="";
-        Set<User> spr=User.getSprUser();
-        switch (jComponent.getName()){
-            case  "login":
-                String loginScreen=textField2_login.getText();
-                if(spr.size()!=0){
-                    for (User temp:spr){
-                        if(temp.login.compareTo(loginScreen)==0) {
-                            result=false;
-                            break;
-                        }
-                    }
-
-                }
-                message=result?"Логин корректен ":"Дублирование логина ";
-                break;
-            case  "confirm":
-            if (textField3_passw.getText().equals(textField4_conf_passw.getText())){
-               message="Пароль норма";
-            }else{
-                message="Пароль  не  норма";
-                result=false;
-            }
-        }
-        JOptionPane.showMessageDialog(RegistarationForm.this,message);
+//        System.out.println(jComponent.getName());
+//        String message="";
+//        //Set<User> spr=new TreeSet<>(use)User.getSprUser();
+//        switch (jComponent.getName()){
+//            case  "login":
+//                String loginScreen=textField2_login.getText();
+//                if(spr.size()!=0){
+//                    for (User temp:spr){
+//                        if(temp.login.compareTo(loginScreen)==0) {
+//                            result=false;
+//                            break;
+//                        }
+//                    }
+//
+//                }
+//                message=result?"Логин корректен ":"Дублирование логина ";
+//                break;
+//            case  "confirm":
+//            if (textField3_passw.getText().equals(textField4_conf_passw.getText())){
+//               message="Пароль норма";
+//            }else{
+//                message="Пароль  не  норма";
+//                result=false;
+//            }
+//        }
+//        JOptionPane.showMessageDialog(RegistarationForm.this, message);
         return result;
     }
 }
@@ -66,7 +68,7 @@ private class MyVerifer extends  InputVerifier{
         String emeil=textField6_emeil.getText();
         new User(fio,login,password,emeil,
                 Integer.valueOf(telef.trim()).intValue(),Role.Pokupatel);
-        System.out.println(User.getSprUser());
+       // System.out.println(User.getSprUser());
         this.setVisible(false);
         // TODO add your code here
     }
@@ -121,6 +123,7 @@ private class MyVerifer extends  InputVerifier{
             @Override
             public void actionPerformed(ActionEvent e) {
                 button1ActionPerformed(e);
+                button1ActionPerformed(e);
             }
         });
 
@@ -131,36 +134,35 @@ private class MyVerifer extends  InputVerifier{
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addGap(34, 34, 34)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label5)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(textField5_telef))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label4)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(textField4_conf_passw))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label3)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(textField3_passw, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label1)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField1_fio, GroupLayout.PREFERRED_SIZE, 231, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label2)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField2_login, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(9, 9, 9)
-                            .addComponent(label6)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField6_emeil)))
-                    .addContainerGap(78, Short.MAX_VALUE))
-                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addContainerGap(34, Short.MAX_VALUE)
-                    .addComponent(button1, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)
-                    .addGap(180, 180, 180))
+                            .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addComponent(label5)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(textField5_telef))
+                            .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addComponent(label4)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(textField4_conf_passw))
+                            .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addComponent(label3)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(textField3_passw, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))
+                            .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addComponent(label1)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(textField1_fio, GroupLayout.PREFERRED_SIZE, 231, GroupLayout.PREFERRED_SIZE))
+                            .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addComponent(label2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(textField2_login, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE))
+                            .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addGap(9, 9, 9)
+                                    .addGroup(contentPaneLayout.createParallelGroup()
+                                            .addComponent(button1, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(contentPaneLayout.createSequentialGroup()
+                                                    .addComponent(label6)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(textField6_emeil)))))
+                    .addContainerGap(83, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -189,9 +191,9 @@ private class MyVerifer extends  InputVerifier{
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label6)
                         .addComponent(textField6_emeil, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(32, 32, 32)
+                    .addGap(30, 30, 30)
                     .addComponent(button1)
-                    .addContainerGap(31, Short.MAX_VALUE))
+                    .addContainerGap(33, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());
